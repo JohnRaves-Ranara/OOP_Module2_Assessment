@@ -2,15 +2,19 @@ import 'package:androidstudio_projects/dashboard_screen.dart';
 import 'package:androidstudio_projects/total_balance.dart';
 import 'package:flutter/material.dart';
 
+String amount = "";
+
 class dummy_transfermoney_screen extends StatefulWidget {
-  const dummy_transfermoney_screen({ Key? key }) : super(key: key);
+  const dummy_transfermoney_screen({Key? key}) : super(key: key);
   @override
-  _dummy_transfermoney_screenState createState() => _dummy_transfermoney_screenState();
+  _dummy_transfermoney_screenState createState() =>
+      _dummy_transfermoney_screenState();
 }
 
-class _dummy_transfermoney_screenState extends State<dummy_transfermoney_screen> {
+class _dummy_transfermoney_screenState
+    extends State<dummy_transfermoney_screen> {
   TextEditingController amountTextField = new TextEditingController();
-  String amount = "";
+
   final authenticateAmount = SnackBar(content: Text("Invalid amount."));
 
   @override
@@ -25,14 +29,16 @@ class _dummy_transfermoney_screenState extends State<dummy_transfermoney_screen>
               labelText: "Enter amount",
             ),
           ),
-          SizedBox(height:20),
+          SizedBox(height: 20),
           ElevatedButton(
-            onPressed: (){
+            onPressed: () {
               setState(() {
                 amount = amountTextField.text;
-                if(double.parse(amount)<200.0 || double.parse(amount)>total_balance){
-                  ScaffoldMessenger.of(context).showSnackBar(authenticateAmount);
-                }else{
+                if (double.parse(amount) < 200.0 ||
+                    double.parse(amount) > total_balance) {
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(authenticateAmount);
+                } else {
                   total_balance -= double.parse(amount);
                   print("transfer successful. total balance $total_balance");
                 }
@@ -41,10 +47,13 @@ class _dummy_transfermoney_screenState extends State<dummy_transfermoney_screen>
             child: Text("Confirm"),
           ),
           ElevatedButton(
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => dashboard_screen()));
-            }
-          , child: Text("back"))
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => dashboard_screen()));
+              },
+              child: Text("back"))
         ],
       ),
     );
