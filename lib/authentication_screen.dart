@@ -10,47 +10,44 @@ class authentication_screen extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black,
-        body: Column(
-          children: [
-            Stack(children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 120, horizontal:20),
-                child: Text("Hello",
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: 100, fontWeight: FontWeight.bold, color: Colors.white))),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 220, horizontal:20),
-                child: Text("There.",
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: 100, fontWeight: FontWeight.bold),color: Colors.white)),
-              ),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top:500),
-                  child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: Size(350,40),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => login_screen()));
-                      },
-                      child: Text(
-                        "Sign In",
-                        style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(fontSize: 18,color: Colors.black)),
-                      ),
-                      ),
+        body: Stack(children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 20),
+            child: Text("Hello",
+                style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                        fontSize: 100,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white))),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 220, horizontal: 20),
+            child: Text("There.",
+                style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
+                    color: Colors.white)),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 500),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  minimumSize: Size(350, 40),
                 ),
-              )
-            ])
-          ],
-        ));
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => login_screen()));
+                },
+                child: Text(
+                  "Sign In",
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(fontSize: 18, color: Colors.black)),
+                ),
+              ),
+            ),
+          )
+        ]));
   }
 }

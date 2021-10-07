@@ -1,6 +1,4 @@
-import 'package:androidstudio_projects/dashboard_screen.dart';
 import 'package:androidstudio_projects/total_balance.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 String amount = "";
@@ -48,11 +46,8 @@ class _dummy_transfermoney_screenState
             child: Text("Confirm"),
           ),
           ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => dashboard_screen()));
+              onPressed:(){
+
               },
               child: Text("back")),
           Text("$total_balance",

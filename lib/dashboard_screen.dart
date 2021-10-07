@@ -27,10 +27,6 @@ class _dashboard_screenState extends State<dashboard_screen> {
         elevation: 0.0,
       ),
       body: Stack(clipBehavior: Clip.none, children: [
-        Container(
-          color: Colors.black,
-          height: 1920,
-        ),
         Padding(
           padding: const EdgeInsets.only(top: 30),
           child: Container(
